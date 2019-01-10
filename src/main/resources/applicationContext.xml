@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<bean name="student" class="factory.Student"/>
+	<bean name="aopTest" class="aop.AopTest"/>
+    <bean name="aopTest1" class="aop.AopTest1"/>
+	<aop:config >
+		<aop:aspect id="asp1" ref="aopTest1" order="0">
+			<aop:pointcut id="pt1" expression="@annotation(factory.Student1)"/>
+			<aop:before method="before" pointcut-ref="pt1"/>
+			<aop:after method="after" pointcut-ref="pt1"/>
+			<aop:after-returning method="afterReturn" pointcut-ref="pt1"/>
+			<aop:after-throwing method="afterThrow" pointcut-ref="pt1"/>
+			<aop:around method="around" pointcut-ref="pt1"/>
+		</aop:aspect>
+		<aop:aspect id="asp" ref="aopTest" order="1">
+			<aop:pointcut id="pt" expression="@annotation(factory.Student2)"/>
+			<aop:before method="before" pointcut-ref="pt"/>
+			<aop:after method="after" pointcut-ref="pt"/>
+			<aop:after-returning method="afterReturn" pointcut-ref="pt"/>
+			<aop:after-throwing method="afterThrow" pointcut-ref="pt"/>
+			<aop:around method="around" pointcut-ref="pt"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
