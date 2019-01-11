@@ -30,6 +30,6 @@ public class AopTest1 {
 	public Object around(ProceedingJoinPoint pJoinPoint)throws Throwable{
 		log.info("+++++++++around...........1+++++++++");
 		Object ob = pJoinPoint.proceed();
-		return pJoinPoint.proceed();
+		return ob;
 	}
 }
