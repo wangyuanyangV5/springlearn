@@ -1,5 +1,7 @@
 package design_patterns.iterator.version1;
 
+import java.util.Iterator;
+
 /**
  * Created by dell on 2019/1/11.
  */
@@ -35,5 +37,8 @@ public abstract class MenuComponent {
     public void print(){
         throw new UnsupportedOperationException();
     }
+
+
+    public abstract Iterator createIterator();
 
 }

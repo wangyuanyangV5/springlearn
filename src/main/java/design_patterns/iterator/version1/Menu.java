@@ -51,4 +51,9 @@ public class Menu extends MenuComponent{
         }
     }
 
+    @Override
+    public Iterator createIterator() {
+        return new NullIterator();
+    }
+
 }
