@@ -15,14 +15,14 @@ configurations {
 }
 
 dependencies {
-    compile 'org.springframework:spring-context:3.2.6.RELEASE'
-    compile 'org.springframework:spring-aspects:3.2.6.RELEASE'
+    compile 'org.springframework:spring-context:5.1.0.RELEASE'
+    compile 'org.springframework:spring-aspects:5.1.0.RELEASE'
 
-    compile 'org.springframework:spring-jdbc:3.2.6.RELEASE'
-    compile 'org.springframework:spring-test:3.2.6.RELEASE'
+    compile 'org.springframework:spring-jdbc:5.1.0.RELEASE'
+    compile 'org.springframework:spring-test:5.1.0.RELEASE'
 
-    compile 'org.springframework:spring-web:3.2.6.RELEASE'
-    compile 'org.springframework:spring-webmvc:3.2.6.RELEASE'
+    compile 'org.springframework:spring-web:5.1.0.RELEASE'
+    compile 'org.springframework:spring-webmvc:5.1.0.RELEASE'
 //    compile 'org.springframework:spring-websocket:3.2.6.RELEASE'
   //  compile 'org.springframework:spring-messaging:3.2.6.RELEASE'
     //compile 'org.springframework:spring-webflux:3.2.6.RELEASE'
