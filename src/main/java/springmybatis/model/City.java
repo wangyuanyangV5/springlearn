@@ -1,4 +1,4 @@
-package com.mybatis.model;
+package springmybatis.model;
 
 public class City {
     private Long id;
@@ -33,6 +33,6 @@ public class City {
 
     @Override
     public String toString() {
-        return "id:" + id + ";name:" + name;
+        return "id:" + id + ";name:" + name + ";state:" + state;
     }
 }

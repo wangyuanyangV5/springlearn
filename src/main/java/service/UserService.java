@@ -1,5 +1,6 @@
 package service;
 
+import com.mybatis.mapper.CityMapper;
 import com.mybatis.mapper.UsersMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,9 @@ public class UserService {
 	@Autowired
 	private UsersMapper usersMapper;
 
+	@Autowired
+	private CityMapper cityMapper;
+
 	private String name;
 	private int age;
 
@@ -31,6 +35,7 @@ public class UserService {
 	public void test(){
 		log.error( "----------------------result:" + usersMapper.select("1") + "-----------");
 		log.error( "----------------------result:" + usersMapper.select("2") + "-----------");
+		log.error( "----------------------result:" + cityMapper.selectAll() + "-----------");
 	}
 
 	public void say(){
