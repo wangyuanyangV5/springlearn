@@ -1,4 +1,4 @@
-package mybatis1.mapperinterface;
+package mybatis.mapperinterface;
 
 /**
  * Created by dell on 2019/1/10.

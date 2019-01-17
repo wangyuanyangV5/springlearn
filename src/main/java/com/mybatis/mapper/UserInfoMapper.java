@@ -1,6 +1,6 @@
 //package com.mybatis.mapper;
 //
-//import com.mybatis1.model.UserInfo;
+//import com.mybatis.model.UserInfo;
 //import java.util.List;
 //
 //public interface UserInfoMapper {

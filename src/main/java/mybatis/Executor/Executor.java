@@ -1,4 +1,4 @@
-package mybatis1.Executor;
+package mybatis.Executor;
 
 /**
  * Created by dell on 2019/1/10.

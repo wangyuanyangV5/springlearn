@@ -1,7 +1,7 @@
-package mybatis1.mapper;
+package mybatis.mapper;
 
-import mybatis1.SqlSession.SqlSession;
-import mybatis1.xml.TestXml;
+import mybatis.SqlSession.SqlSession;
+import mybatis.xml.TestXml;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -22,7 +22,7 @@ public class MapperProxy<T> implements InvocationHandler {
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		if(method.getDeclaringClass().getName().equals(mapperInterface.getName())){
-			String sql = new TestXml("mybatis1.mapperinterface.Test").getSql(method.getName());
+			String sql = new TestXml("mybatis.mapperinterface.Test").getSql(method.getName());
 			String parameter = String.valueOf(args[0]);
 			return sqlSession.selectOne(sql,parameter);
 		}

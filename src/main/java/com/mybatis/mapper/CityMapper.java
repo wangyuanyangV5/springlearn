@@ -1,6 +1,6 @@
 //package com.mybatis.mapper;
 //
-//import com.mybatis1.model.City;
+//import com.mybatis.model.City;
 //import java.util.List;
 //
 //public interface CityMapper {

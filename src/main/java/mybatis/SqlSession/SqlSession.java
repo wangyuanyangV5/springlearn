@@ -1,8 +1,8 @@
-package mybatis1.SqlSession;
+package mybatis.SqlSession;
 
-import mybatis1.Executor.Executor;
-import mybatis1.config.Configuration;
-import mybatis1.mapper.MapperProxy;
+import mybatis.Executor.Executor;
+import mybatis.config.Configuration;
+import mybatis.mapper.MapperProxy;
 
 import java.lang.reflect.Proxy;
 

@@ -1,4 +1,4 @@
-package mybatis1.xml;
+package mybatis.xml;
 
 
 import lombok.Data;

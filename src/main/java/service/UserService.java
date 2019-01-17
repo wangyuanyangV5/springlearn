@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 
@@ -14,8 +15,8 @@ import javax.annotation.PostConstruct;
 @Service
 public class UserService {
 
-//	@Autowired
-//	private UsersMapper usersMapper;
+	@Autowired
+	private UsersMapper usersMapper;
 
 	private String name;
 	private int age;
@@ -26,8 +27,13 @@ public class UserService {
 		log.error("-------------init-------------");
 	}
 
-//	public void test(){
-//		log.error( "----------------------result:" + usersMapper.selectAll() + "-----------");
-//	}
+	@Transactional
+	public void test(){
+		log.error( "----------------------result:" + usersMapper.select("1") + "-----------");
+		log.error( "----------------------result:" + usersMapper.select("2") + "-----------");
+	}
 
+	public void say(){
+		log.error( "----------------------result:" + usersMapper.select("1") + "-----------");
+	}
 }

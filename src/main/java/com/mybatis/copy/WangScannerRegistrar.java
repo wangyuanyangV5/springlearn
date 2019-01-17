@@ -18,7 +18,7 @@ public class WangScannerRegistrar implements ImportBeanDefinitionRegistrar {
 
 		GenericBeanDefinition beanDefinition = (GenericBeanDefinition) builder.getBeanDefinition();
 		beanDefinition.setBeanClass(WangMapperFactoryBean.class);
-		beanDefinition.getConstructorArgumentValues().addGenericArgumentValue("com.mybatis1.mapper.UsersMapper");
+		beanDefinition.getConstructorArgumentValues().addGenericArgumentValue("com.mybatis.mapper.UsersMapper");
 
 		registry.registerBeanDefinition("usersMapper",beanDefinition);
 	}

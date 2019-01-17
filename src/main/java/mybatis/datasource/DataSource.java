@@ -1,4 +1,4 @@
-package mybatis1.datasource;
+package mybatis.datasource;
 
 /**
  * Created by dell on 2019/1/10.

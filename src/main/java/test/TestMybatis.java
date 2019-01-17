@@ -13,7 +13,7 @@ import service.UserService;
 public class TestMybatis {
 
 	public static void main(String[] args) throws Exception{
-//		String resource = "mybatis1.xml";
+//		String resource = "mybatis.xml";
 //		InputStream inputStream = Resources.getResourceAsStream(resource);
 //		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 //		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -23,7 +23,8 @@ public class TestMybatis {
 //		System.out.println(usersMapper.selectAll());
 
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeenDifine.class);
-//		applicationContext.getBean(UserService.class).test();
+		applicationContext.getBean(UserService.class).test();
+		applicationContext.getBean(UserService.class).say();
 //		applicationContext.getBean(UserService.class).test();
 
 	}

@@ -1,6 +1,6 @@
 //package com.mybatis.mapper;
 //
-//import com.mybatis1.model.Country;
+//import com.mybatis.model.Country;
 //import java.util.List;
 //
 //public interface CountryMapper {

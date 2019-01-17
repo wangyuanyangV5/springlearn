@@ -18,7 +18,7 @@ public class UserService1 {
 	private Logger log = LoggerFactory.getLogger(UserService1.class);
 
 	public void test(){
-		log.error(  usersMapper.selectAll() + "-----------");
+		log.error(  usersMapper.select("1") + "-----------");
 	}
 
 }

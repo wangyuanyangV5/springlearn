@@ -35,6 +35,6 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "姓名:" + userName + "生日:" + brithday + super.toString();
+		return "userId:" + userId + ";姓名:" + userName + ";生日:" + brithday + super.toString();
 	}
 }
