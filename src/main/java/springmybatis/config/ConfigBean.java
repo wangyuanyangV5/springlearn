@@ -1,6 +1,7 @@
 package springmybatis.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import springmybatis.service.SumService;
+import springmybatis.typehandler.EnumTypeHandler;
 
 import javax.sql.DataSource;
 
@@ -40,7 +42,9 @@ public class ConfigBean {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
                 .getResources("classpath:springmybatisxml/*.xml"));
-
+        TypeHandler<?>[] typeHandlers = new TypeHandler[1];
+        typeHandlers[0] = new EnumTypeHandler();
+        sqlSessionFactoryBean.setTypeHandlers(typeHandlers );;
         return sqlSessionFactoryBean.getObject();
     }
 

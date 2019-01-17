@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="springmybatis.model.City">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="state" jdbcType="VARCHAR" property="state" typeHandler="springmybatis.typehandler.EnumTypeHandler"/>
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from city

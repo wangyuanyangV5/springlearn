@@ -1,11 +1,13 @@
 package springmybatis.model;
 
+import springmybatis.myenum.StateEnum;
+
 public class City {
     private Long id;
 
     private String name;
 
-    private String state;
+    private StateEnum state;
 
     public Long getId() {
         return id;
@@ -23,12 +25,12 @@ public class City {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getState() {
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
+    public void setState(StateEnum state) {
+        this.state = state;
     }
 
     @Override
