@@ -3,12 +3,16 @@ package springmybatis.config;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springmybatis.service.SumService;
 import springmybatis.typehandler.EnumTypeHandler;
 
@@ -19,6 +23,8 @@ import javax.sql.DataSource;
  */
 @Configuration
 @MapperScan(basePackages = "springmybatis.mapper")
+@EnableTransactionManagement
+@EnableAspectJAutoProxy(exposeProxy= true)
 public class ConfigBean {
 
     @Bean
@@ -49,8 +55,14 @@ public class ConfigBean {
     }
 
     @Bean
-    public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource){
+    public PlatformTransactionManager dataSourceTransactionManager(DataSource dataSource){
         return new  DataSourceTransactionManager(dataSource);
+    }
+
+
+    @Bean
+    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) throws Exception {
+        return new SqlSessionTemplate(sqlSessionFactory);
     }
 
 }

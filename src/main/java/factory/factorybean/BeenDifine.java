@@ -65,9 +65,9 @@ public class BeenDifine {
 //	public PlatformTransactionManager txManager(DataSource dataSource) {
 //		return new DataSourceTransactionManager(dataSource);
 //	}
-@Bean
-public SqlSessionTemplate sqlSessionTemplate( SqlSessionFactory sqlSessionFactory) throws Exception {
-	return new SqlSessionTemplate(sqlSessionFactory);
-}
+	@Bean
+	public SqlSessionTemplate sqlSessionTemplate( SqlSessionFactory sqlSessionFactory) throws Exception {
+		return new SqlSessionTemplate(sqlSessionFactory);
+	}
 
 }

@@ -11,5 +11,6 @@ public class SpringMybatisTest {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigBean.class);
         applicationContext.getBean(SumService.class).test();
+        applicationContext.getBean(SumService.class).testTransactional();
     }
 }

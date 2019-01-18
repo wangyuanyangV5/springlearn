@@ -3,8 +3,10 @@ package springmybatis.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import springmybatis.mapper.CityMapper;
 import springmybatis.mapper.UsersMapper;
@@ -26,10 +28,10 @@ public class SumService {
 
     public void test(){
         log.info(cityMapper.selectAll().toString());
-        testTransactional();
+        ((SumService) AopContext.currentProxy()).testTransactional();
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     public void testTransactional(){
         log.info(usersMapper.selectAll().toString());
         log.info(usersMapper.selectAll().toString());
