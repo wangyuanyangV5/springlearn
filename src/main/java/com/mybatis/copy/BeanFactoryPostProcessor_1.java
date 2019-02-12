@@ -18,13 +18,13 @@ public class BeanFactoryPostProcessor_1 implements BeanFactoryPostProcessor,Orde
 
         System.out.println("容器中有 BeanDefinition 的个数：" + beanFactory.getBeanDefinitionCount());
 
-        // 获取指定的 BeanDefinition
-        BeanDefinition bd = beanFactory.getBeanDefinition("userService");
-
-        MutablePropertyValues pvs = bd.getPropertyValues();
-
-        pvs.addPropertyValue("name","chenssy1");
-        pvs.addPropertyValue("age",15);
+//        // 获取指定的 BeanDefinition
+//        BeanDefinition bd = beanFactory.getBeanDefinition("userService");
+//
+//        MutablePropertyValues pvs = bd.getPropertyValues();
+//
+//        pvs.addPropertyValue("name","chenssy1");
+//        pvs.addPropertyValue("age",15);
     }
 
     @Override

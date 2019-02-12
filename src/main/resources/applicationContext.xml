@@ -8,6 +8,7 @@
          http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<bean name="student" class="factory.Student"/>
 	<bean name="aopTest" class="aop.AopTest"/>
+	<bean name="" class="com.mybatis.copy.BeanFactoryPostProcessor_1"/>
     <bean name="aopTest1" class="aop.AopTest1"/>
 	<aop:config >
 		<aop:aspect id="asp1" ref="aopTest1" order="1">
